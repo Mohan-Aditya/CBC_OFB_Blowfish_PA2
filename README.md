@@ -12,3 +12,13 @@ CBC has been the most commonly used mode of operation. Its main drawbacks are th
 
 The Output Feedback (OFB) mode makes a block cipher into a synchronous stream cipher. It generates keystream blocks, which are then XORed with the plaintext blocks to get the ciphertext. Just as with other stream ciphers, flipping a bit in the ciphertext produces a flipped bit in the plaintext at the same location. This property allows many error-correcting codes to function normally even when applied before encryption.
 Because of the symmetry of the XOR operation, encryption and decryption are exactly the same.
+
+
+
+Code starts with initializing S-boxes and subkeys initialisation.
+Then functions for decimal to binary, hexadecimal to binary, binary to hexadecimal conversions, xor of two hexadecimal strings, addition modulo 2^32 respectively can be found.
+The function “f”, function for generating subkeys, round functions can be found thereafter.
+Using the above functions encryption function using blowfish algorithm was made. (Decryption function can also be found for verification purpose)
+Later, functions required for CBC mode with plain text as input were written which include functions like text to hexadecimal conversion, creating random numbers for sake of nonce, block-1 encryption function, subsequent block encryption function, function for padding the text.
+
+Then, functions for OFB mode were written which include xor that has to be used for OFB mode and creating random numbers for sake of nonce.
